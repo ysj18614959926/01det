@@ -66,21 +66,30 @@ export default [
     component: Main,
     children: [
       {
-        path: 'asset-info',
-        name: '机器资产信息',
+        path: '',
+        name: 'info',
         meta: {
           access: ['super_admin'],
-          icon: 'md-funnel',
+          icon: 'md-add',
           showAlways: true,
           title: '二级-2'
         },
         component: parentView,
         children: [
           {
+            path: 'asset-info',
+            name: '机器资产信息',
+            meta: {
+              icon: 'md-add',
+              title: '三级'
+            },
+            component: () => import('@/view/machine-manage/asset-info.vue')
+          },
+          {
             path: 'single-asset-info',
             name: '单机资产信息',
             meta: {
-              icon: 'md-funnel',
+              icon: 'md-add',
               title: '三级'
             },
             component: () => import('@/view/machine-manage/single-asset-info.vue')
@@ -89,7 +98,7 @@ export default [
             path: 'machine-import',
             name: '机器导入页面',
             meta: {
-              icon: 'md-funnel',
+              icon: 'md-add',
               title: '三级'
             },
             component: () => import('@/view/machine-manage/machine-import.vue')
@@ -101,7 +110,7 @@ export default [
         name: '机器group管理',
         meta: {
           access: ['super_admin'],
-          icon: 'md-funnel',
+          icon: 'md-add',
           showAlways: true,
           title: '二级-2'
         },
@@ -111,7 +120,7 @@ export default [
             path: 'machine-check',
             name: '机器选择',
             meta: {
-              icon: 'md-funnel',
+              icon: 'md-add',
               title: '三级'
             },
             component: () => import('@/view/machine-manage/machine-check.vue')
@@ -120,7 +129,7 @@ export default [
             path: 'add-group',
             name: '添加group',
             meta: {
-              icon: 'md-funnel',
+              icon: 'md-add',
               title: '三级'
             },
             component: () => import('@/view/machine-manage/add-group.vue')
